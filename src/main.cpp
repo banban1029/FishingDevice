@@ -1,18 +1,22 @@
-#include <Arduino.h>
+#include <M5StickCPlus.h>
+#include "gyro_sender.h"
 
-// put function declarations here:
-int myFunction(int, int);
+void setup()
+{
+  M5.begin();
+  M5.Imu.Init();
+  M5.Lcd.setRotation(3);
+  M5.Lcd.fillScreen(BLACK);
+  M5.Lcd.setTextFont(4);
+  M5.Lcd.setTextSize(1);
 
-void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+  setupGyroSender();
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+void loop()
+{
+  M5.update();
+  confirmToWifi();
+  updateGyroSender();
+  delay(10);
 }
