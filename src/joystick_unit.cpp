@@ -39,7 +39,6 @@ void updateJoystick()
         M5.Lcd.printf("X:%d      ", scaleX);
         M5.Lcd.setCursor(10, 80);
         M5.Lcd.printf("Y:%d      ", scaleY);
-        // M5.Lcd.printf("Y:%d      ", y_data);
         M5.Lcd.setCursor(10, 110);
         M5.Lcd.printf("B:%d      ", button_data);
     }

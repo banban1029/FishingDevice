@@ -1,5 +1,7 @@
 #include <M5StickCPlus.h>
 #include "gyro_sender.h"
+#include "vibration.h"
+#include "joystick_unit.h"
 
 void setup()
 {
@@ -11,6 +13,8 @@ void setup()
   M5.Lcd.setTextSize(1);
 
   setupGyroSender();
+  setupVibration();
+  setupJoystick();
 }
 
 void loop()
@@ -18,5 +22,7 @@ void loop()
   M5.update();
   confirmToWifi();
   updateGyroSender();
+  updateVibration();
+  updateJoystick();
   delay(10);
 }
