@@ -39,8 +39,8 @@ void updateGyroSender()
     udp.print(buf);
     udp.endPacket();
 
-    M5.Lcd.setCursor(10, 70);
-    M5.Lcd.printf("%5.1f ,%5.1f ,%5.1f ", gx, gy, gz);
+    // M5.Lcd.setCursor(10, 70);
+    // M5.Lcd.printf("%5.1f ,%5.1f ,%5.1f ", gx, gy, gz);
 
     if (M5.BtnA.wasPressed())
     {
